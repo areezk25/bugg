@@ -25,6 +25,10 @@ gem 'bootstrap', '~> 5.0'
 gem 'devise', '~> 4.8'
 gem 'jquery-rails', '~> 4.4'
 
+gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
+
+gem 'cancancan', '~> 3.2', '>= 3.2.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
