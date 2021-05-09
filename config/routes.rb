@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :projects do
+    resources :tasks
+  end
+  namespace :project do
+    resources :tasks
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'dashboard/dash'
   devise_for :users
