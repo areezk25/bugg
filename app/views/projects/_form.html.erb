@@ -21,9 +21,9 @@
     <%= form.text_area :description %>
   </div>
 
-  <div class="field">
+  <div class="form-control", disabled>
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, value:current_user.id%>
+    <%= form.hidden_field :user_id, value:current_user.id%>
   </div>
 
   <div class="actions">

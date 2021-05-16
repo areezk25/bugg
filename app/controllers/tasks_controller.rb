@@ -2,9 +2,12 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  
+ 
 
   # GET projects/1/tasks
   def index
+    @users = User.all 
     @tasks = @project.tasks
   end
 
@@ -14,6 +17,7 @@ class TasksController < ApplicationController
 
   # GET projects/1/tasks/new
   def new
+    @users = User.all
     @task = @project.tasks.build
   end
 
@@ -23,6 +27,7 @@ class TasksController < ApplicationController
 
   # POST projects/1/tasks
   def create
+
     @task = @project.tasks.build(task_params)
 
     if @task.save

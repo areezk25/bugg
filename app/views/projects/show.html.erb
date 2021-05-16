@@ -30,6 +30,7 @@
     <th>Deadline</th>
     <th>Status</th>
     <th>Project</th>
+    <th>Assigned To</th>
     <th></th>
     <th></th>
     <th></th>
@@ -43,9 +44,15 @@
     <td><%= task.deadline %></td>
     <td><%= task.status %></td>
     <td><%= task.project %></td>
+    <td><%= task.assigned %></td>
     <td><%= link_to 'Show', [task.project, task] %></td>
+
+    <% if current_user.manager_role?%>
     <td><%= link_to 'Edit', edit_project_task_path(task.project, task) %></td>
     <td><%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <%end%>
+    
   </tr>
 <% end %>
 </table>
