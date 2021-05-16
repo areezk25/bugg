@@ -23,10 +23,12 @@ class TasksController < ApplicationController
 
   # GET projects/1/tasks/1/edit
   def edit
+    @users = User.all
   end
 
   # POST projects/1/tasks
   def create
+    @users = User.all
 
     @task = @project.tasks.build(task_params)
 
@@ -39,7 +41,8 @@ class TasksController < ApplicationController
 
   # PUT projects/1/tasks/1
   def update
-    if @task.update_attributes(task_params)
+    
+    if @task.update(task_params)
       redirect_to(@task.project)
     else
       render action: 'edit'
@@ -65,6 +68,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:title, :description, :todo, :deadline, :status, :project_id)
+      params.require(:task).permit(:title, :description, :todo, :deadline, :status, :project_id, :assigned)
     end
 end

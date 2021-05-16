@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :project
   has_many :users
-  belongs_to :users
+  belongs_to :users, :optional => true
 
   validates :status, inclusion: { in: [ 'not-started', 'in-progress', 'completed']}
   STATUS_OPTIONS = [
