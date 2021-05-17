@@ -11,7 +11,7 @@ class Ability
       can :manage, :dashboard         # allow access to dashboard
     end
     if user.creator_role?
-      can :manage, User
+      can :manage, project
     end
     # Define abilities for the passed in user here. For example:
     #

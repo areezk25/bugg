@@ -1,0 +1,8 @@
+<% if current_user.manager_role?%>
+<h1>Editing Task</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@task.project, @task] %> |
+<%= link_to 'Back', project_path(@project) %>
+<% end %>
