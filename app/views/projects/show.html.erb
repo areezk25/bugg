@@ -31,6 +31,7 @@
     <th>Status</th>
     <th>Project</th>
     <th>Assigned To</th>
+    <th>Image</th>
     <th></th>
     <th></th>
     <th></th>
@@ -45,6 +46,7 @@
     <td><%= task.status %></td>
     <td><%= task.project %></td>
     <td><%= task.assigned %></td>
+    <td><%= image_tag task.image.variant(resize: "100x100"), size: '100'%></td> 
     <td><%= link_to 'Show', [task.project, task] %></td>
 
     <% if current_user.manager_role?%>

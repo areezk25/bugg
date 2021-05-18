@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :project
   has_many :users
+  has_one_attached :image 
   belongs_to :users, :optional => true
 
   validates :status, inclusion: { in: [ 'not-started', 'in-progress', 'completed']}

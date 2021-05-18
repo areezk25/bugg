@@ -36,6 +36,11 @@
     <%= f.select :assigned, (options_for_select(@users.all.collect { |u| [u.email, u.email]}) ) %>
   </div>
 
+  <div>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+
   
 
   <div class="actions">

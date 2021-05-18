@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :projects
   has_and_belongs_to_many :tasks
 
-  
+  ROLES = %w[manager developer qa creator]
 end
